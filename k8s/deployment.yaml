@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: complaint-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: complaint-app
+  template:
+    metadata:
+      labels:
+        app: complaint-app
+    spec:
+      containers:
+      - name: app
+        image: complaint-app
+        ports:
+        - containerPort: 10000
